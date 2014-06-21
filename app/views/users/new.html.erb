@@ -1,0 +1,9 @@
+<%=form_for :user, url: users_path do |f|%>
+	<%=f.label :name, "Nombre de usuario:"%>
+	<%=f.text_field :name, required: :true%>
+	<br>
+	<%=f.label :password, "Contraseña"%>
+	<%=f.password_field :password, required: :true%>
+	<br>
+	<%=f.submit "Crear cuenta"%>
+<%end%>
