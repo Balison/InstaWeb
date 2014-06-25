@@ -5,9 +5,13 @@ class PicturesController < ApplicationController
 	end
 
 	def create
-		user = User.find_by id: session[:user_id]
-		picture = Picture.create(file: params[:file], title: params[:title], user: user)
-		redirect_to controller: "instagram", action: "index"
+		@user = User.find_by id: session[:user_id]
+		@picture = Picture.new(file: params[:picture][:file], title: params[:picture][:title], user: @user)
+		if @picture.save
+			redirect_to controller: "instagram", action: "index"
+		else
+			render 'instagram/userIndex'
+		end
 	end
 
 

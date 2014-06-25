@@ -1,5 +1,15 @@
 <h2>Bienvenido <%=@user.name%>! </h2>
 
+<% if @picture && @picture.errors.any? %>
+	<h2><%= pluralize(@picture.errors.count, "error") %> prohibited
+      this picture from being saved:</h2>
+    <ul>
+    <% @picture.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<%end%>
+
 <%=form_for :picture, url: user_pictures_path(user_id: @user.id), :html => { :multipart => true } do |f|%>
 	<%=f.label :file%>
 	<%=f.file_field :file%><br>
@@ -8,8 +18,8 @@
 	<%=f.submit "Guardar"%>
 <% end %>
 
-<%=@user.pictures.each do |pic|%>
-	<%=image_tag pic.file.url%>
+<%@user.pictures.each do |pic|%>
+	<%=image_tag pic.file.url(:medium)%>
 <%end%>
 
 <%=link_to "Cerrar Session", controller: "instagram", action: "closeSession" %>

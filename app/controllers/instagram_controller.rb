@@ -3,7 +3,7 @@ class InstagramController < ApplicationController
   	@user = User.find_by name: params[:username]
   	@params = params
   	if (@user)
-	  	if @user.name == params[:password]
+	  	if @user.password == params[:password]
 	  		session[:user_id] = @user.id
 	  	end
 	end
