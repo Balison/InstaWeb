@@ -24,8 +24,11 @@ ActiveRecord::Schema.define(version: 20140614223902) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "pictures", force: true do |t|
-    t.date     "creationDate"
     t.string   "title"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

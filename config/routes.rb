@@ -1,6 +1,7 @@
 Instagram::Application.routes.draw do
 
   resources :users do
+  	resources :pictures
   end
 
   get "/" => "instagram#index"
