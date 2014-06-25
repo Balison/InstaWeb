@@ -7,8 +7,11 @@ class UsersController < ApplicationController
 	end
 	def create
 		user = User.new(user_params)
-		user.save
-		redirect_to users_path
+		
+		if user.save
+			session[:user_id] = user.id
+		end	
+		redirect_to controller: :instagram, action: :index
 	end
 
 	def show

@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
 
 	def index
-		@pictures = Picture.all
+		redirect_to controller: "instagram", action: "index"
 	end
 
 	def create
@@ -14,7 +14,12 @@ class PicturesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@picture = Picture.find(params[:id])
+		@picture.destroy
 
+		redirect_to controller: :instagram, action: :index
+	end
 	private
 	def picture_params
 		params.require(:picture).permit(:file, :title)
