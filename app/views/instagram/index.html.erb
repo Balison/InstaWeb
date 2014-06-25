@@ -1,5 +1,5 @@
-<h1>Hola! Bienvenido a <span class = "logo">Instagram</span></h1>
-<h1>Iniciar Sesion</h1>
+<h1 id = "bienvenida">Hola! Bienvenido a <span class = "logo">Insta<span id = "g">g</span>ram</span></h1>
+<h1 id = "iniciar">Iniciar Sesion</h1>
 
 <%= form_tag do %>
 <%= label_tag :username, "Nombre de usuario:" %>
@@ -7,7 +7,8 @@
 <br>
 <%= label_tag :password, "Contraseña:" %>
 <%= password_field_tag :password, nil, required: :true %>
-<%= submit_tag "Entrar" %>
+<br>
+<%= submit_tag "Entrar", id: :submit %>
 <% end %>
 
 <p>Eres nuevo? <%=link_to "Registrate!", new_user_path%></p>
