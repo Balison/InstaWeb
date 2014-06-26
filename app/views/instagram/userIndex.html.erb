@@ -1,4 +1,4 @@
-<h2>Bienvenido <%=@user.name%>! </h2>
+<h1 id= "bienvenida">Bienvenido <span class = "logo"><%=@user.name%>!<span> </h1>
 
 <% if @picture && @picture.errors.any? %>
 	<h2><%= pluralize(@picture.errors.count, "error") %> prohibited
@@ -15,7 +15,7 @@
 	<%=f.file_field :file%><br>
 	<%=f.label :title%>
 	<%=f.text_field :title%><br>
-	<%=f.submit "Guardar"%>
+	<%=f.submit "Guardar", id: :submit%>
 <% end %>
 
 <%@user.pictures.each do |pic|%>
