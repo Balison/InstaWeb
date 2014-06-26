@@ -1,7 +1,7 @@
 class Picture < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments
-	has_attached_file :file, :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+	has_attached_file :file, :styles => { :large => "480x320>", :medium => "300x300>", :thumb => "100x100>" }, 
 	:url  => "/assets/pictures/:id/:style/:basename.:extension",
     :path => ":rails_root/public/assets/pictures/:id/:style/:basename.:extension"
    

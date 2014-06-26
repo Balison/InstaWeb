@@ -1,0 +1,13 @@
+<h1><%=@picture.title%></h1>
+<br><br>
+<%=image_tag @picture.file.url(:large)%>
+
+<h2>Comentarios:</h2>
+
+<% if @picture.comments.any? %>
+	<%@picture.comments.each do |c| %>
+		<h3><%c.user%></h3>
+	<% end %>
+<% else %>
+
+<% end %>

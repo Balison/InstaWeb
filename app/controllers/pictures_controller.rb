@@ -1,7 +1,12 @@
 class PicturesController < ApplicationController
 
 	def index
-		redirect_to controller: "instagram", action: "index"
+		@user = User.find_by id: session[:user_id]
+		@pictures = @user.pictures
+	end
+
+	def new
+		@user = User.find_by id: session[:user_id]
 	end
 
 	def create
@@ -14,11 +19,16 @@ class PicturesController < ApplicationController
 		end
 	end
 
+	def show
+		@picture = Picture.find(params[:id])
+		
+	end
+
 	def destroy
 		@picture = Picture.find(params[:id])
 		@picture.destroy
 
-		redirect_to controller: :instagram, action: :index
+		redirect_to user_pictures_path
 	end
 	private
 	def picture_params

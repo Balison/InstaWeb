@@ -11,7 +11,7 @@ body
 	border-radius: 5px;
 	height: 70px;
 	padding: 20px;
-	margin: 0px;
+	margin: 20px;
 	font-family: Arial,Helvetica,sans-serif;
 	color: white;
 }
@@ -51,7 +51,7 @@ form
 {
 	margin: auto;
 	height: 150px;
-	width: 250px;
+	width: 350px;
 	padding: 20px;
 	border: black solid 3px;
 	border-radius: 5px;
@@ -102,4 +102,9 @@ a:visited
 #submit:hover
 {
 	background: #0099FF;
+}
+
+.slide{
+	margin: auto;
+	margin-top: 20px;
 }

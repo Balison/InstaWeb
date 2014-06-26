@@ -1,4 +1,4 @@
-<h1 id= "bienvenida">Bienvenido <span class = "logo"><%=@user.name%>!<span> </h1>
+<%=render "userHeader"%>
 
 <% if @picture && @picture.errors.any? %>
 	<h2><%= pluralize(@picture.errors.count, "error") %> prohibited
@@ -10,18 +10,6 @@
     </ul>
 <%end%>
 
-<%=form_for :picture, url: user_pictures_path(user_id: @user.id), :html => { :multipart => true } do |f|%>
-	<%=f.label :file%>
-	<%=f.file_field :file%><br>
-	<%=f.label :title%>
-	<%=f.text_field :title%><br>
-	<%=f.submit "Guardar", id: :submit%>
-<% end %>
+<%=render "pictureForm"%>
 
-<%@user.pictures.each do |pic|%>
-	<h2><%=pic.title%></h2>
-	<%=link_to "Eliminar", user_picture_path(@user, pic), method: :delete, data: {confirm: "Esta seguro?"}%><br>
-	<%=image_tag pic.file.url(:medium)%><br>
-<%end%>
-
-<%=link_to "Cerrar Session", controller: "instagram", action: "closeSession" %>
+<%=render "userSlides"%>																																																																																																																																																																								

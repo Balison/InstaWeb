@@ -1,0 +1,8 @@
+<%=form_for :picture, url: user_pictures_path(user_id: @user.id), :html => { :multipart => true } do |f|%>
+	<%=f.label :file%>
+	<%=f.file_field :file%><br>
+	<%=f.label :title%>
+	<%=f.text_field :title%><br>
+	<%=f.submit "Guardar", id: :submit%>
+	<%=link_to "Administrar Imagenes", user_pictures_path(@user)%>
+<% end %>

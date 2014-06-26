@@ -1,0 +1,19 @@
+
+<div class = "slide">
+	<%@user.pictures.each do |pic|%>
+		<h2><%= pic.title %></h2>
+	<% end %>
+</div>
+
+<div class = "slide">
+<%@user.pictures.each do |pic|%>
+	<%=link_to (image_tag pic.file.url(:large)), user_picture_path(user_id: @user.id, id: pic.id)%>
+<%end%>						
+</div>
+
+<script type="text/javascript">
+	$('.slide').cycle({
+		fx: 'turnDown',
+		delay: -4000
+	});
+</script>		
