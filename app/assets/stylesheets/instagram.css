@@ -47,10 +47,9 @@ body
 	font-size: 30px;
 }
 
-form
+#pictureForm, #loginForm
 {
 	margin: auto;
-	height: 150px;
 	width: 350px;
 	padding: 20px;
 	border: black solid 3px;
@@ -61,12 +60,12 @@ form
 	font-size: 16px;
 }
 
-label
+#pictureForm label
 {
 	margin: 10px;
 }
 
-input
+#pictureForm input
 {
 	margin: 10px;
 	border: black solid 2px;
@@ -107,4 +106,18 @@ a:visited
 .slide{
 	margin: auto;
 	margin-top: 20px;
+}
+
+#saveErrors{
+	margin: auto;
+	max-width: 920px;
+}
+
+#saveErrors ul{
+	position: relative;
+	display: block;
+	text-align: center;
+	width: auto;
+	margin: auto;
+	list-style: none;
 }

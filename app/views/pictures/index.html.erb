@@ -3,5 +3,7 @@
 	<%=image_tag pic.file.url(:medium)%>
 	<%=link_to "eliminar", user_picture_path(id: pic.id), method: :delete, data: {confirm: "¿Esta seguro?"}%>
 <%end%>
-
+<br><br>
 <%=link_to "Añadir nueva foto", new_user_picture_path%>
+<br>
+<%=link_to "Volver al inicio", controller: :instagram, action: :index%>

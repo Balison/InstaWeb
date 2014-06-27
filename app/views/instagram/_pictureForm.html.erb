@@ -1,8 +1,10 @@
+<div id = "pictureForm">
 <%=form_for :picture, url: user_pictures_path(user_id: @user.id), :html => { :multipart => true } do |f|%>
-	<%=f.label :file%>
+	<%=f.label :file, "Archivo"%>
 	<%=f.file_field :file%><br>
-	<%=f.label :title%>
+	<%=f.label :title, "Titulo"%>
 	<%=f.text_field :title%><br>
-	<%=f.submit "Guardar", id: :submit%>
+	<%=f.submit "Guardar", id: :submit%><br>
 	<%=link_to "Administrar Imagenes", user_pictures_path(@user)%>
 <% end %>
+</div>

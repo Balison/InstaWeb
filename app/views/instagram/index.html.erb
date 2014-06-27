@@ -1,6 +1,7 @@
 <h1 id = "bienvenida">Hola! Bienvenido a <span class = "logo">Insta<span id = "g">g</span>ram</span></h1>
 <h1 id = "iniciar">Iniciar Sesion</h1>
 
+<div id = "loginForm">
 <%= form_tag do %>
 <%= label_tag :username, "Nombre de usuario:" %>
 <%= text_field :username, nil, required: :true%>
@@ -10,6 +11,7 @@
 <br>
 <%= submit_tag "Entrar", id: :submit %>
 <% end %>
+</div>
 
 <p>Eres nuevo? <%=link_to "Registrate!", new_user_path%></p>
 <p id = "materia">Programacion Web.</p>

@@ -1,5 +1,5 @@
-<%=render "userHeader"%>
-
+<%=render "instagram/userHeader"%>
+<div id = "saveErrors">
 <% if @picture && @picture.errors.any? %>
 	<h2><%= pluralize(@picture.errors.count, "error") %> prohibited
       this picture from being saved:</h2>
@@ -9,7 +9,8 @@
     <% end %>
     </ul>
 <%end%>
+</div>
+<br>
+<%=render "instagram/pictureForm"%>
 
-<%=render "pictureForm"%>
-
-<%=render "userSlides"%>																																																																																																																																																																								
+<%=render "instagram/userSlides"%>																																																																																																																																																																								
