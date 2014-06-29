@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
 
 	def show
 		@picture = Picture.find(params[:id])
-		
+		@user = User.find(session[:user_id])
 	end
 
 	def destroy

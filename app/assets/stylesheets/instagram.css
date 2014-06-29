@@ -121,3 +121,9 @@ a:visited
 	margin: auto;
 	list-style: none;
 }
+
+#commentField{
+	width: 480px;
+	height: 100px;
+	resize: none;
+}
